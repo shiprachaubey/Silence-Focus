@@ -1,4 +1,4 @@
-package com.silence_focus
+package com.silent_focus
 
 import android.app.Application
 import com.facebook.react.PackageList
