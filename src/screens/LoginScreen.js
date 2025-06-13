@@ -56,7 +56,12 @@ const LoginScreen = () => {
         style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
-        <ScrollView contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps="handled">
+       <ScrollView
+  contentContainerStyle={{ paddingBottom: 40 }}
+  keyboardShouldPersistTaps="handled"
+  showsVerticalScrollIndicator={false}
+>
+
           <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
   <BackIcon color={isDark ? 'white' : 'black'} />
 </TouchableOpacity>
@@ -148,7 +153,7 @@ const LoginScreen = () => {
 
                 <View style={styles.dividerRow}>
                   <View style={styles.line} />
-                  <Text style={styles.orText}>or login with</Text>
+                  <Text style={styles.orText}>or login </Text>
                   <View style={styles.line} />
                 </View>
 
@@ -243,20 +248,16 @@ const styles = StyleSheet.create({
 },
 
 outerCard: {
-  position: 'absolute',
-  bottom: 0,
+  marginTop: hp(6),
   width: '100%',
-  height: height * 0.7, // outer card height
   backgroundColor: 'rgba(21, 22, 21, 0.17)',
   borderTopLeftRadius: 42,
   borderTopRightRadius: 42,
   paddingTop: 16,
   paddingHorizontal: 16,
-  justifyContent: 'flex-end', // push inner card to bottom
 },
 
 innerCard: {
-  height: height * 0.65, // 60% of screen height
   backgroundColor: '#FFF',
   borderRadius: 42,
   padding: 24,
@@ -266,6 +267,19 @@ innerCard: {
   shadowRadius: 10,
   elevation: 8,
 },
+
+
+// innerCard: {
+//   height: height * 0.65, // 60% of screen height
+//   backgroundColor: '#FFF',
+//   borderRadius: 42,
+//   padding: 24,
+//   shadowColor: '#000',
+//   shadowOffset: { width: 0, height: 4 },
+//   shadowOpacity: 0.25,
+//   shadowRadius: 10,
+//   elevation: 8,
+// },
 socialRow: {
   flexDirection: 'row',
   justifyContent: 'space-between',
@@ -298,21 +312,34 @@ socialText: {
   fontWeight: '500',
   marginLeft:5,
 },
-
-
 heading: {
   fontSize: 32,
   fontWeight: '600',
-  color: '#fff', // was #000
-  marginTop: 100,
-  marginLeft: 24,
+  color: '#fff',
+  marginTop: hp(5),
+  marginHorizontal: 24,
 },
 subheading: {
   color: '#ccc',
   fontSize: 18,
   marginTop: 8,
-  marginLeft: 24,
+  marginHorizontal: 24,
 },
+
+
+// heading: {
+//   fontSize: 32,
+//   fontWeight: '600',
+//   color: '#fff', // was #000
+//   marginTop: 100,
+//   marginLeft: 24,
+// },
+// subheading: {
+//   color: '#ccc',
+//   fontSize: 18,
+//   marginTop: 8,
+//   marginLeft: 24,
+// },
 
  loginCard: {
   position: 'absolute',
