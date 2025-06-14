@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     fontSize: wp('7%'),
     fontWeight: '600',
     fontFamily: 'Roboto',
-    marginTop: hp('2%'),
+    marginTop: hp('4%'),
   },
   
    subgreeting:{
