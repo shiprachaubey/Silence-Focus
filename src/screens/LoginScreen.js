@@ -218,54 +218,6 @@ const LoginScreen = () => {
   );
 };
 
-// const styles = StyleSheet.create({
-//   container: { flex: 1 },
-//   backButton: { position: 'absolute', top: 20, left: 24, zIndex: 10 },
-//   heading: { fontSize: 32, fontWeight: '600', marginTop: 80, marginHorizontal: 24 },
-//   subheading: { fontSize: 16, marginTop: 8, marginHorizontal: 24 },
-//   outerCard: { flex: 1, justifyContent: 'flex-end' },
-//   cardWrapper: {
-//     borderTopLeftRadius: 42,
-//     borderTopRightRadius: 42,
-//     paddingHorizontal: 24,
-//     paddingTop: 24,
-//     paddingBottom: 36,
-//     backgroundColor: '#fff',
-//     shadowColor: '#000',
-//     shadowOffset: { width: 0, height: -4 },
-//     shadowOpacity: 0.1,
-//     shadowRadius: 10,
-//     elevation: 10,
-//     flexGrow: 1
-//   },
-//   tabRow: { flexDirection: 'row', backgroundColor: '#e0e0e0', borderRadius: 50, marginBottom: 24, padding: 6 },
-//   tabButton: { flex: 1, paddingVertical: 12, alignItems: 'center' },
-//   tabActive: { backgroundColor: '#fff', borderRadius: 50 },
-//   tabText: { color: '#333', fontWeight: '600' },
-//   tabTextActive: { color: '#D67D33' },
-//   inputBox: { borderRadius: 16, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, marginBottom: 16, height: 60 },
-//   input: { flex: 1, fontSize: 14 },
-//   inputIcon: { marginRight: 10 },
-//   inputIconRight: { marginLeft: 10 },
-//   row: { flexDirection: 'row', justifyContent: 'space-between', marginVertical: 8, alignItems: 'center' },
-//   rowLeft: { flexDirection: 'row', alignItems: 'center' },
-//   rememberText: { marginLeft: 8, fontSize: 13 },
-//   forgotText: { color: '#D67D33', fontSize: 13 },
-//   loginButton: { backgroundColor: '#D67D33', paddingVertical: 14, borderRadius: 30, alignItems: 'center', marginTop: 16 },
-//   loginButtonText: { color: '#fff', fontWeight: 'bold', fontSize: 16 },
-//   dividerRow: { flexDirection: 'row', alignItems: 'center', marginVertical: 24 },
-//   line: { flex: 1, height: 1, backgroundColor: '#ddd' },
-//   orText: { marginHorizontal: 8, color: '#888', fontSize: 12 },
-//   socialRow: { flexDirection: 'row', justifyContent: 'space-between' },
-//   socialButtonModern: { flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderColor: '#D67D33', backgroundColor: '#fff', borderRadius: 32, paddingVertical: 12, paddingHorizontal: 20, flex: 1, marginHorizontal: 4 },
-//   socialIconModern: { width: 20, height: 20, marginRight: 10, resizeMode: 'contain' },
-//   socialText: { fontSize: 14, color: '#000', fontWeight: '500', marginLeft: 5 },
-//   modalOverlay: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-//   modalContent: { width: '85%', backgroundColor: '#fff', padding: 24, borderRadius: 32, alignItems: 'center', shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.2, shadowRadius: 8, elevation: 10 },
-// });
-
-// export default LoginScreen;
-
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
