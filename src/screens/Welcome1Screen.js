@@ -173,6 +173,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 const WelcomeScreen1 = () => {
   const colorScheme = useColorScheme();
@@ -252,27 +253,44 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: -hp('10%'),
   },
+  // title: {
+  //   fontSize: wp('7.5%'),
+  //   fontWeight: 'bold',
+  //   textAlign: 'center',
+  //   alignSelf: 'center',
+  //   marginBottom: hp('10%'),
+  // },
   title: {
-    fontSize: wp('7.5%'),
-    fontWeight: 'bold',
-    textAlign: 'center',
-    alignSelf: 'center',
-    marginBottom: hp('10%'),
-  },
+  fontSize: scale(28), // consistent across devices
+  fontWeight: 'bold',
+  textAlign: 'center',
+  alignSelf: 'center',
+  marginBottom: hp('8%'),
+},
+
+description: {
+  fontSize: moderateScale(14),
+  fontWeight: '600',
+  textAlign: 'left',
+  alignSelf: 'flex-start',
+  lineHeight: moderateScale(20),
+  marginBottom: hp('6%'),
+},
+
   image: {
     width: wp('90%'),
     height: hp('40%'),
     marginBottom: hp('3%'),
     marginTop: hp('-4%'),
   },
-  description: {
-    fontSize: wp('4.2%'),
-    fontWeight: '600',
-    textAlign: 'left',
-    alignSelf: 'flex-start',
-    lineHeight: hp('3.5%'),
-    marginBottom: hp('6%'),
-  },
+  // description: {
+  //   fontSize: wp('4.2%'),
+  //   fontWeight: '600',
+  //   textAlign: 'left',
+  //   alignSelf: 'flex-start',
+  //   lineHeight: hp('3.5%'),
+  //   marginBottom: hp('6%'),
+  // },
   dots: {
     flexDirection: 'row',
     gap: wp('2%'),
