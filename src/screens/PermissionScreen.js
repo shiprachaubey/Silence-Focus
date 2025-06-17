@@ -36,6 +36,9 @@ const PermissionScreen = () => {
   const cardColor = isDark ? '#1a1a1a' : '#f3f3f3';
   const orange = '#B87333';
 
+  
+
+
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(30)).current;
 
@@ -79,7 +82,7 @@ const PermissionScreen = () => {
           <Text style={[styles.title, { color: textColor }]}>
             You Stay in{'\n'}Control
           </Text>
-          <Text style={[styles.description, { color: subtitleColor }]}>
+          <Text style={[styles.description, { color: subtitleColor }]}  allowFontScaling={false}>
             To automate silent mode based on where you are and what’s on your calendar, we need a few permissions.
           </Text>
 
@@ -169,13 +172,27 @@ const styles = StyleSheet.create({
     lineHeight: width * 0.06,
     fontFamily: 'Roboto',
   },
+  // card: {
+  //   flexDirection: 'row',
+  //   padding: width * 0.045,
+  //   borderRadius: 17,
+  //   alignItems: 'flex-start',
+  //   marginBottom: height * 0.025,
+  // },
   card: {
-    flexDirection: 'row',
-    padding: width * 0.045,
-    borderRadius: 17,
-    alignItems: 'flex-start',
-    marginBottom: height * 0.025,
-  },
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  padding: 16,
+  borderRadius: 17,
+  marginBottom: 16,
+  flexWrap: 'nowrap',
+},
+
+textBlock: {
+  flex: 1,
+  flexShrink: 1, // allow text to wrap
+},
+
   icon: {
     marginRight: 12,
     marginTop: 6,
@@ -189,12 +206,19 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginBottom: 4,
   },
+  // cardDescription: {
+  //   fontSize: width * 0.036,
+  //   fontFamily: 'Roboto',
+  //   fontWeight: '300',
+  //   lineHeight: 20,
+  // },
   cardDescription: {
-    fontSize: width * 0.036,
-    fontFamily: 'Roboto',
-    fontWeight: '300',
-    lineHeight: 20,
-  },
+  fontSize: 14,
+  fontWeight: '300',
+  lineHeight: 20,
+  flexWrap: 'wrap',
+},
+
   button: {
     position: 'absolute',
     bottom: height * 0.035,
