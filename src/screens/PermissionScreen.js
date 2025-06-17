@@ -64,6 +64,9 @@ const PermissionScreen = () => {
       />
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+       
+        {/* <View style={styles.scrollContent}> */}
+
         <Animated.View
           style={[
             styles.content,
@@ -128,6 +131,7 @@ const PermissionScreen = () => {
             </TouchableOpacity>
           </View>
         </Animated.View>
+        {/* </View> */}
       </ScrollView>
 
       <TouchableOpacity
@@ -147,7 +151,7 @@ const styles = StyleSheet.create({
   scrollContent: {
     paddingHorizontal: width * 0.06,
     paddingTop: height * 0.04,
- paddingBottom: height * 0.50,
+    paddingBottom: height * 0.15,
 
   },
   content: {

@@ -16,7 +16,7 @@ const ScheduleCard = () => {
     <View style={styles.container}>
       <Text style={[styles.title, { color: isDark ? 'white' : '#1C1C1C' }]}>SET A SCHEDULE</Text>
       <Text style={[styles.description, { color: isDark ? '#FAFAFA' : '#1C1C1C' }]}>
-        Have the Silence Focus turn on automatically at a set time
+        Have the Silent Focus turn on automatically at a set time
       </Text>
 
       <View style={[styles.card, { backgroundColor: isDark ? '#1C1C1C' : '#5555551F' }]}>

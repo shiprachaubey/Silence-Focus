@@ -53,7 +53,7 @@ const LoginScreen = () => {
           </TouchableOpacity>
 
           <Text style={[styles.heading, { color: textColor }]}>Go ahead and setup your account</Text>
-          <Text style={[styles.subheading, { color: subTextColor }]}>Sign in-up to enjoy the best experiences</Text>
+          <Text style={[styles.subheading, { color: subTextColor }]}>Sign up and enjoy the unique experience of Silent Focus</Text>
 
           <View style={styles.outerCard}>
             <View style={styles.cardWrapper}>
@@ -270,7 +270,7 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   backButton: { position: 'absolute', top: 20, left: 24, zIndex: 10 },
-  heading: { fontSize: 32, fontWeight: '600', marginTop: 80, marginHorizontal: 24 },
+  heading: { fontSize: 32, fontWeight: '600', marginTop: 60, marginHorizontal: 24 },
   subheading: { fontSize: 16, marginTop: 8, marginHorizontal: 24 },
   outerCard: { flex: 1, justifyContent: 'flex-end' },
   // cardWrapper: {

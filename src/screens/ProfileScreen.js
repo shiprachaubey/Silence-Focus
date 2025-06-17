@@ -97,9 +97,9 @@ const phoneInputRef = useRef(null);
         </Section>
 
         {/* Calendar Settings */}
-        <Section title="Calender Settings" height={isCalendarSynced ? 200 : 180} cardColor={card}>
+        <Section title="Calendar Settings" height={isCalendarSynced ? 200 : 180} cardColor={card}>
           <Field
-            label="Calender Sync"
+            label="Calendar Sync"
             value={isCalendarSynced ? 'Active' : 'Inactive'}
             color={isCalendarSynced ? '#34A853' : '#999'}
           />
@@ -111,7 +111,7 @@ const phoneInputRef = useRef(null);
             <>
               <Text style={[styles.providerText, { color: mutedText }]}>{calendarProvider}</Text>
               <TouchableOpacity onPress={handleDisconnectCalendar}>
-                <Text style={styles.disconnect}>Disconnect Calender</Text>
+                <Text style={styles.disconnect}>Disconnect Calendar</Text>
               </TouchableOpacity>
             </>
           ) : (
@@ -222,13 +222,14 @@ const Separator = ({ divider }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: hp('1.5%'),
+    paddingTop: hp('1%'),
     paddingHorizontal: wp('5%'),
   },
   scrollContent: {
-    paddingBottom: hp('16%'),
-    paddingTop: hp('3%'),
+    paddingBottom: hp('12%'),
+    paddingTop: hp('2%'),
   },
+ 
   header: {
     fontSize: wp('5.5%'),
     fontWeight: '600',

@@ -95,13 +95,22 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
+  // container: {
+  //   flex: 1,
+  // },
+  // scrollContent: {
+  //   paddingHorizontal: wp('5%'),
+  //   paddingTop: hp('2%'),
+  //   paddingBottom: hp('12%'),
+  // },
   container: {
     flex: 1,
+    paddingTop: hp('1%'),
+    paddingHorizontal: wp('5%'),
   },
   scrollContent: {
-    paddingHorizontal: wp('5%'),
+    paddingBottom: hp('7%'),
     paddingTop: hp('2%'),
-    paddingBottom: hp('12%'),
   },
   greeting: {
     fontSize: wp('7%'),

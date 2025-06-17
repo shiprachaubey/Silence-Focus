@@ -12,7 +12,7 @@ import {
   Dimensions,
   useColorScheme,
 } from 'react-native';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 import LocationIcon from '../assets/svgs/Location';
 import CalendarIcon from '../assets/svgs/Calender';
 import NotificationIcon from '../assets/svgs/Notification';
@@ -34,7 +34,7 @@ const SettingsScreen = () => {
 
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
-
+ const background = isDark ? '#111' : '#fff';
   const bg = isDark ? '#111111' : '#FFFFFF';
   const card = isDark ? 'rgba(85, 85, 85, 0.12)' : '#2E3A3E14';
   const text = isDark ? '#FFFFFF' : '#1A1A1A';
@@ -42,7 +42,8 @@ const SettingsScreen = () => {
   const divider = isDark ? 'rgba(85, 85, 85, 0.35)' : '#C2C2C2';
 
   return (
- <ScrollView style={[styles.container, { backgroundColor: bg }]} contentContainerStyle={{ paddingBottom: hp('7%') }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: background }}>
+<ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
       <Text style={styles.title}>Control Center</Text>
 
       <Text style={[styles.sectionTitle, { color: text }]}>SELECT SILENCE FOCUS MODE</Text>
@@ -56,7 +57,7 @@ const SettingsScreen = () => {
         onPress: () => setLocationMode(p => !p),
       }, {
         icon: <CalendarIcon />,
-        title: 'Calender Mode',
+        title: 'Calendar Mode',
         desc: 'Your phone will be muted automatically during scheduled meetings or events.',
         toggle: calendarMode,
         onPress: () => setCalendarMode(p => !p),
@@ -144,14 +145,24 @@ const SettingsScreen = () => {
         </View>
       </Modal>
     </ScrollView>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  // container: {
+  //   flex: 1,
+  //   paddingTop: hp('7%'),
+  //   paddingHorizontal: wp('5%'),
+  // },
   container: {
     flex: 1,
-    paddingTop: hp('4%'),
+    paddingTop: hp('1%'),
     paddingHorizontal: wp('5%'),
+  },
+   scrollContent: {
+    paddingBottom: hp('12%'),
+    paddingTop: hp('2%'),
   },
   title: {
     fontSize: wp('5.5%'),

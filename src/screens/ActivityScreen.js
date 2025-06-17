@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 import CallIcon from '../assets/svgs/Call';
 import MessageIcon from '../assets/svgs/Message';
 import CrossIcon from '../assets/svgs/CrossButton';
@@ -20,6 +20,7 @@ import CrossIcon from '../assets/svgs/CrossButton';
 const ActivityCenterScreen = () => {
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
+  const background = isDark ? '#111' : '#fff';
 
   const [logs, setLogs] = useState([
     { id: 1, name: 'Steve Jobs', type: 'CALL', time: '5 min ago' },
@@ -42,6 +43,7 @@ const ActivityCenterScreen = () => {
   };
 
   return (
+     <SafeAreaView style={{ flex: 1, backgroundColor: background }}>
     <ScrollView
       style={[
         styles.container,
@@ -130,20 +132,30 @@ const ActivityCenterScreen = () => {
         </View>
       ))}
     </ScrollView>
+    </SafeAreaView>
   );
 };
 
 export default ActivityCenterScreen;
 
 const styles = StyleSheet.create({
+  // container: {
+  //   flex: 1,
+
+  //   paddingHorizontal: wp('4%'),
+  // },
+  // scrollContent: {
+  //   paddingTop: hp('5%'),
+  //   paddingBottom: hp('5%'),
+  // },
   container: {
     flex: 1,
     paddingTop: hp('1%'),
-    paddingHorizontal: wp('4%'),
+    paddingHorizontal: wp('5%'),
   },
   scrollContent: {
-    paddingTop: hp('5%'),
-    paddingBottom: hp('5%'),
+    paddingBottom: hp('7%'),
+    paddingTop: hp('2%'),
   },
   title: {
     fontSize: wp('5.5%'),
