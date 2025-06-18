@@ -18,6 +18,8 @@ import CalenderIcon from '../assets/svgs/Calender';
 import LocationIcon from '../assets/svgs/Location';
 import NotificationIcon from '../assets/svgs/Notification';
 import Toggle from '../assets/svgs/Toggle';
+import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+
 
 const { width, height } = Dimensions.get('window');
 

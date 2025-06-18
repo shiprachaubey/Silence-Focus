@@ -259,8 +259,8 @@ title: {
 description: {
   fontSize: moderateScale(14),
   fontWeight: '600',
-  textAlign: 'left',
-  alignSelf: 'flex-start',
+  textAlign: 'centre',
+  alignSelf: 'centre',
   lineHeight: moderateScale(20),
   marginBottom: hp('6%'),
 },
