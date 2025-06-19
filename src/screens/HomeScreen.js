@@ -60,10 +60,10 @@ const HomeScreen = () => {
           timer > 0 && (
             <View style={styles.missedSection}>
               <Text style={[styles.missedTitle, { color: isDark ? 'white' : '#000' }]}>
-                You Missed
+               Missed Notification
               </Text>
               <Text style={styles.seeAll}>See all</Text>
-              {[1, 2, 3].map((_, idx) => (
+              {[1, 2, 3,4,5,6,7,8,9].map((_, idx) => (
                 <View
                   key={idx}
                   style={[
@@ -95,23 +95,17 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  // },
-  // scrollContent: {
-  //   paddingHorizontal: wp('5%'),
-  //   paddingTop: hp('2%'),
-  //   paddingBottom: hp('12%'),
-  // },
+ 
   container: {
     flex: 1,
     paddingTop: hp('1%'),
     paddingHorizontal: wp('5%'),
   },
-  scrollContent: {
-    paddingBottom: hp('7%'),
-    paddingTop: hp('2%'),
-  },
+ scrollContent: {
+  flexGrow: 1,
+  paddingBottom: hp('12%'),
+  paddingTop: hp('2%'),
+ },
   greeting: {
     fontSize: wp('7%'),
     fontWeight: '600',
