@@ -83,9 +83,21 @@ const HomeScreen = () => {
             </View>
           )
         ) : (
-          <View style={styles.scheduleSection}>
-            <ScheduleCard />
-          </View>
+          // <View style={styles.scheduleSection}>
+          //   <ScheduleCard />
+          // </View>
+
+              <ScrollView contentContainerStyle={styles.scrollContainer}>
+                <Text style={[styles.title, { color: isDark ? 'white' : '#1C1C1C' }]}>SET A SCHEDULE</Text>
+      <Text style={[styles.description, { color: isDark ? '#FAFAFA' : '#1C1C1C' }]}>
+        Have the Silent Focus turn on automatically at a set time
+      </Text>
+
+      {[...Array(5)].map((_, idx) => (
+        <ScheduleCard key={idx} />
+      ))}
+    </ScrollView>
+
         )}
       </ScrollView>
     </View>
@@ -106,6 +118,24 @@ const styles = StyleSheet.create({
   paddingBottom: hp('12%'),
   paddingTop: hp('2%'),
  },
+ scrollContainer: {
+    paddingTop: 20,
+    paddingBottom: 20,
+  },
+    title: {
+    fontSize: wp('3.4%'),
+    fontFamily: 'Roboto',
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    marginBottom: hp('0.6%'),
+    marginTop: hp('-0.6%'),
+  },
+  description: {
+    fontSize: wp('3.3%'),
+    fontFamily: 'Roboto',
+    fontWeight: '400',
+    marginBottom: hp('1.5%'),
+  },
   greeting: {
     fontSize: wp('7%'),
     fontWeight: '600',
