@@ -26,6 +26,18 @@ const ActivityCenterScreen = () => {
     { id: 1, name: 'Steve Jobs', type: 'CALL', time: '5 min ago' },
     { id: 2, name: 'Steve Jobs', type: 'SMS', time: '5 min ago' },
     { id: 3, name: 'Steve Jobs', type: 'WHATSAPP', time: '5 min ago' },
+    { id: 4, name: 'Steve Jobs', type: 'CALL', time: '5 min ago' },
+    { id: 5, name: 'Steve Jobs', type: 'SMS', time: '5 min ago' },
+    { id: 6, name: 'Steve Jobs', type: 'WHATSAPP', time: '5 min ago' },
+     { id: 7, name: 'Steve Jobs', type: 'CALL', time: '5 min ago' },
+    { id: 8, name: 'Steve Jobs', type: 'SMS', time: '5 min ago' },
+    { id: 9, name: 'Steve Jobs', type: 'WHATSAPP', time: '5 min ago' },
+     { id: 10, name: 'Steve Jobs', type: 'CALL', time: '5 min ago' },
+    { id: 12, name: 'Steve Jobs', type: 'SMS', time: '5 min ago' },
+    { id: 13, name: 'Steve Jobs', type: 'WHATSAPP', time: '5 min ago' }, { id: 16, name: 'Steve Jobs', type: 'CALL', time: '5 min ago' },
+    { id: 14, name: 'Steve Jobs', type: 'SMS', time: '5 min ago' },
+    { id: 15, name: 'Steve Jobs', type: 'WHATSAPP', time: '5 min ago' },
+
   ]);
 
   const handleDelete = (id) => {
@@ -139,22 +151,13 @@ const ActivityCenterScreen = () => {
 export default ActivityCenterScreen;
 
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-
-  //   paddingHorizontal: wp('4%'),
-  // },
-  // scrollContent: {
-  //   paddingTop: hp('5%'),
-  //   paddingBottom: hp('5%'),
-  // },
   container: {
     flex: 1,
     paddingTop: hp('1%'),
     paddingHorizontal: wp('5%'),
   },
   scrollContent: {
-    paddingBottom: hp('7%'),
+    paddingBottom: hp('12%'),
     paddingTop: hp('2%'),
   },
   title: {
