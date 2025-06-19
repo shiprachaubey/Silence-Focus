@@ -61,14 +61,33 @@ const SettingsScreen = () => {
         desc: 'Your phone will be muted automatically during scheduled meetings or events.',
         toggle: calendarMode,
         onPress: () => setCalendarMode(p => !p),
-      }, {
-        icon: <NotificationIcon />,
-        title: 'Custom',
-        desc: 'You can add your custom location',
-        toggle: customMode,
-        onPress: () => setCustomMode(p => !p),
+      },
+      // {
+      //   icon: <NotificationIcon />,
+      //   title: 'Custom',
+      //   desc: 'You can add your custom location',
+      //   toggle: customMode,
+      //   onPress: () => setCustomMode(p => !p),
+      // }]
+      {icon: <NotificationIcon />,
+      title: 'Custom',
+      desc: 'You can add your custom location',
+      toggle: customMode,
+      onPress: () => setCustomMode(p => !p),
+       isCustom: true, // Add flag
       }].map((item, idx) => (
-        <View key={idx} style={[styles.modeCard, { backgroundColor: card }]}>
+        <View
+  key={idx}
+  style={[
+    styles.modeCard,
+    {
+      backgroundColor: card,
+      minHeight: item.isCustom ? undefined : hp('14%'),
+      paddingVertical: item.isCustom ? hp('2.8%') : hp('2%'),
+    },
+  ]}
+>
+
           <View style={styles.row}>
             <View style={styles.iconBox}>{item.icon}</View>
             <View style={styles.textBlock}>
@@ -150,11 +169,6 @@ const SettingsScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   paddingTop: hp('7%'),
-  //   paddingHorizontal: wp('5%'),
-  // },
   container: {
     flex: 1,
     paddingTop: hp('1%'),
@@ -177,15 +191,23 @@ const styles = StyleSheet.create({
     marginBottom: hp('1.5%'),
     marginTop: hp('1%'),
   },
+  // modeCard: {
+  //   width: wp('90%'),
+  //   height: hp('14%'),
+  //   borderRadius: wp('4.5%'),
+  //   paddingHorizontal: wp('4%'),
+  //   paddingVertical: hp('2%'),
+  //   marginBottom: hp('2%'),
+  //   alignSelf: 'center',
+  // },
   modeCard: {
-    width: wp('90%'),
-    height: hp('14%'),
-    borderRadius: wp('4.5%'),
-    paddingHorizontal: wp('4%'),
-    paddingVertical: hp('2%'),
-    marginBottom: hp('2%'),
-    alignSelf: 'center',
-  },
+  width: wp('90%'),
+  borderRadius: wp('4.5%'),
+  paddingHorizontal: wp('4%'),
+  alignSelf: 'center',
+  marginBottom: hp('2%'),
+},
+
   row: {
     flexDirection: 'row',
     alignItems: 'center',
