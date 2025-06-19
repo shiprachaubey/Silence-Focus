@@ -24,7 +24,7 @@ const icons = {
 
 const labels = {
   Home: 'Home',
-  Missed: 'Missed',
+  Missed: 'Activity',
   Control: 'Control',
   Accounts: 'Accounts',
 };

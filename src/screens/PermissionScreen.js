@@ -20,14 +20,18 @@ import NotificationIcon from '../assets/svgs/Notification';
 import Toggle from '../assets/svgs/Toggle';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
-
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const { width, height } = Dimensions.get('window');
+
+  //const insets = useSafeAreaInsets();
+
 
 const PermissionScreen = () => {
   const navigation = useNavigation();
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
-
+ const insets = useSafeAreaInsets();
+//const { width, height } = Dimensions.get('window');
   const [locationEnabled, setLocationEnabled] = useState(false);
   const [calendarEnabled, setCalendarEnabled] = useState(true);
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
@@ -62,6 +66,7 @@ const PermissionScreen = () => {
   }, []);
 
   return (
+     <SafeAreaView style={{ flex: 1 }}>
     <SafeAreaView style={[styles.container, { backgroundColor }]}>
       <StatusBar
         backgroundColor={backgroundColor}
@@ -140,11 +145,12 @@ const PermissionScreen = () => {
       </ScrollView>
 
       <TouchableOpacity
-        style={[styles.button, { backgroundColor: orange }]}
+        style={[styles.button, { backgroundColor: orange ,  bottom: insets.bottom + height * 0.015,}]}
         onPress={() => navigation.navigate('Login')}
       >
         <Text style={styles.buttonText}>Continue</Text>
       </TouchableOpacity>
+    </SafeAreaView>
     </SafeAreaView>
   );
 };
@@ -222,8 +228,10 @@ textBlock: {
 },
 
   button: {
+    // position: 'absolute',
+    // bottom: height * 0.035,position: 'absolute',
     position: 'absolute',
-    bottom: height * 0.035,
+    //bottom: insets.bottom + height * 0.015,
     left: width * 0.06,
     right: width * 0.06,
     borderRadius: 30,
@@ -232,6 +240,17 @@ textBlock: {
     justifyContent: 'center',
     elevation: 4,
   },
+//   button: {
+//   position: 'absolute',
+//   left: width * 0.06,
+//   right: width * 0.06,
+//   borderRadius: 30,
+//   paddingVertical: height * 0.02,
+//   alignItems: 'center',
+//   justifyContent: 'center',
+//   elevation: 4,
+// },
+
   buttonText: {
     color: '#fff',
     fontSize: width * 0.045,

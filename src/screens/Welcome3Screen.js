@@ -272,8 +272,8 @@ const styles = StyleSheet.create({
 description: {
   fontSize: moderateScale(14),
   fontWeight: '600',
-  textAlign: 'centre',
-  alignSelf: 'centre',
+  textAlign: 'center',
+  alignSelf: 'center',
   lineHeight: moderateScale(20),
   marginBottom: hp('6%'),
 },
