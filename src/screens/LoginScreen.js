@@ -23,6 +23,8 @@ import { BlurView } from '@react-native-community/blur';
 import PasswordIcon from '../assets/svgs/Password';
 import BackIcon from '../assets/svgs/Back';
 import { Mail, Eye, EyeOff } from 'lucide-react-native';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 
 const { height } = Dimensions.get('window');
 
@@ -45,15 +47,25 @@ const LoginScreen = () => {
   return (
     <SafeAreaView style={[styles.container, { backgroundColor }]}>
       <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} backgroundColor={backgroundColor} />
+       <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+    <BackIcon width={24} height={24} color={isDark ? '#fff' : '#000'} />
+  </TouchableOpacity>
 
       <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={{ flex: 1 }}>
-          <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+          {/* <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
             <BackIcon color={isDark ? 'white' : 'black'} />
           </TouchableOpacity>
 
           <Text style={[styles.heading, { color: textColor }]}>Go ahead and setup your account</Text>
-          <Text style={[styles.subheading, { color: subTextColor }]}>Sign up and enjoy the unique experience of Silent Focus</Text>
+          <Text style={[styles.subheading, { color: subTextColor }]}>Sign up and enjoy the unique experience of Silent Focus</Text> */}
+          <View style={styles.headerWrapper}>
+  <Text style={styles.heading}>Go ahead and setup your account</Text>
+  <Text style={styles.subheading}>
+    Sign up and enjoy the unique experience of Silent Focus
+  </Text>
+</View>
+
 
           <View style={styles.outerCard}>
             <View style={styles.cardWrapper}>
@@ -221,8 +233,14 @@ const LoginScreen = () => {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
-  backButton: { position: 'absolute', top: 20, left: 24, zIndex: 10 },
-  heading: { fontSize: 32, fontWeight: '600', marginTop: 60, marginHorizontal: 24 },
+  backButton: {
+  position: 'absolute',
+  top: hp('5%'), // instead of marginTop
+  left: 16,
+  zIndex: 100,
+},
+
+  heading: { fontSize: 32, fontWeight: '600', marginHorizontal: 24 , marginTop: height * 0.06,},
   subheading: { fontSize: 16, marginTop: 8, marginHorizontal: 24 },
   outerCard: { flex: 1, justifyContent: 'flex-end' },
   // cardWrapper: {
